@@ -1,11 +1,11 @@
 import React from 'react'
 
-export default function blogSlug({params}) {
-    const slugs= params.slug;
+export default async function blogSlug({params}) {
+    const slugs= await params.slug;
     console.log(slugs)
   return (
     <div>
-      this is blogSlug page {slugs.join("/")}
+      blog by slug
     </div>
   )
 }
