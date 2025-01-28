@@ -1,17 +1,37 @@
-// "use client"
+"use client"
 import React from 'react';
 import { getAllProducts } from '@/api/products';
 import Card from '@/components/products/card';
+import { useState, useEffect } from 'react';
 
-export default async function posts({searchParams}) {
-    const products = getAllProducts(await searchParams)
+export default function posts({ searchParams }) {
+    const [products, setProducts] = useState([])
+    const [error, setError] = useState(null)
+    const [loading, setLoading] = useState(true)
+
+    useEffect(() => {
+        async function fetchData() {
+            try {
+                const data = await getAllProducts(searchParams);
+                setProducts(data);
+            } catch (error) {
+                setError(error)
+            } finally {
+                setLoading(false)
+            }
+        }
+        fetchData()
+    }, [searchParams])
+    if (loading) return <div>Loading...</div>
+    if (error) return <div>Error: {error.message}</div>
+
     return (
         <>
-        <div className='text-center font-bold p-3 m-4 border-b-2'>
-            <h1>Posts</h1>
-        </div>
-        <div className='flex flex-wrap justify-center p-4 m-4'>
-            {/* {posts.map(post => (
+            <div className='text-center font-bold p-3 m-4 border-b-2'>
+                <h1>Posts</h1>
+            </div>
+            <div className='flex flex-wrap justify-center p-4 m-4'>
+                {/* {posts.map(post => (
                 
                 <div key={post.id} className="max-w-sm m-4 rounded overflow-hidden shadow-lg">
                     <img className="w-full" src={post.image} alt="Sunset in the mountains" />
@@ -28,7 +48,9 @@ export default async function posts({searchParams}) {
                     </div>
                 </div>
             ))} */}
-            <Card product={products}/>
+                {products.map(product => (
+                    <Card key={product.id} product={product} />
+                ))}
             </div>
         </>
     )

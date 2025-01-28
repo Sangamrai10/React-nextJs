@@ -1,18 +1,13 @@
-import api from '@/api/api';
-import {formatSearchParams} from '@/helpers/formatParams';
+import api from './api';
+import { formatSearchParams } from '@/helpers/formatParams';
 
 async function getAllProducts(searchParams) {
 
     const query = formatSearchParams(searchParams);
 
-    try {
-        const response = await api.get(`/api/products?${query}`);
-    
-        return response.data;
-    } catch (error) {
-        console.log('error fetching data', error)
-        throw error;
-    }
+    const response = await api.get(`/api/products?${query}`);
+
+    return response.data;
 }
 
 export {
