@@ -3,11 +3,12 @@ import React from 'react';
 import { getAllProducts } from '@/api/products';
 import Card from '@/components/products/card';
 import { useState, useEffect } from 'react';
+import Loading from './loading'
 
 export default function posts({ searchParams }) {
     const [products, setProducts] = useState([])
     const [error, setError] = useState(null)
-    const [loading, setLoading] = useState(true)
+    const [loadings, setLoadings] = useState(true)
 
     useEffect(() => {
         async function fetchData() {
@@ -17,12 +18,12 @@ export default function posts({ searchParams }) {
             } catch (error) {
                 setError(error)
             } finally {
-                setLoading(false)
+                setLoadings(false)
             }
         }
         fetchData()
     }, [searchParams])
-    if (loading) return <div>Loading...</div>
+    if (loadings) return <Loading/>
     if (error) return <div>Error: {error.message}</div>
 
     return (

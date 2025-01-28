@@ -1,5 +1,5 @@
-import api from './api';
-import { formatSearchParams } from '@/helpers/formatParams';
+import { formatSearchParams } from "@/helpers/formatParams";
+import api from "./api";
 
 async function getAllProducts(searchParams) {
 
@@ -9,6 +9,7 @@ async function getAllProducts(searchParams) {
 
     return response.data;
 }
+
 
 export {
     getAllProducts,

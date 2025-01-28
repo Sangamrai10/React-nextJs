@@ -1,13 +1,23 @@
-export  function formatSearchParams(searchParams){
-    const {limit, sort, min, max, brand, category, name} = searchParams;
-    let querry="";
-    if(limit)querry=`${querry==""?"":querry+"&"}limit=${limit}`;
-    if(sort)querry=`${querry==""?"":querry+"&"}sort=${sort}`;
-    if(min)querry=`${querry==""?"":querry+"&"}min=${min}`;
-    if(max)querry=`${querry==""?"":querry+"&"}max=${max}`;
-    if(brand)querry=`${querry==""?"":querry+"&"}brand=${brand}`;
-    if(category)querry=`${querry==""?"":querry+"&"}category=${category}`;
-    if(name)querry=`${querry==""?"":querry+"&"}name=${name}`;
 
-    return querry
-}
+
+export function formatSearchParams(searchParams) {
+    const { limit, sort, min, max, brand, category, name } = searchParams;
+  
+    let query = "";
+  
+    if (limit) query = `${query == "" ? "" : query + "&"}limit=${limit}`;
+  
+    if (sort) query = `${query == "" ? "" : query + "&"}sort=${sort}`;
+  
+    if (min) query = `${query == "" ? "" : query + "&"}min=${min}`;
+  
+    if (max) query = `${query == "" ? "" : query + "&"}max=${max}`;
+  
+    if (brand) query = `${query == "" ? "" : query + "&"}brand=${brand}`;
+  
+    if (category) query = `${query == "" ? "" : query + "&"}category=${category}`;
+  
+    if (name) query = `${query == "" ? "" : query + "&"}name=${name}`;
+  
+    return query;
+  }
