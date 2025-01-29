@@ -1,5 +1,5 @@
 
-const { Home_Page, About_Page, Contact_Page, Blog_Page } =require( "./routes");
+const { Home_Page, About_Page, Contact_Page, Products_Page, Login_Page } =require( "./routes");
 
 export const navLink = [
     {
@@ -15,7 +15,11 @@ export const navLink = [
         route: Contact_Page,
     },
     {
-        title: "Blogs",
-        route: Blog_Page,
+        title: "Products",
+        route: Products_Page,
+    },
+    {
+        title: "login",
+        route: Login_Page,
     },
 ];
