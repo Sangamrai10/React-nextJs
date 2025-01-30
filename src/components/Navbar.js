@@ -18,7 +18,7 @@ export default function Navbar() {
                         <Link 
                         href={link.route} 
                         key={index} 
-                        className={isActive? "text-blue-500": "text-black" }
+                        className={isActive? "text-blue-500": "text-black"}
                         >
                             {link.title}
                         </Link>

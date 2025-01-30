@@ -29,7 +29,7 @@ export default function posts({ searchParams }) {
     return (
         <>
             <div className='flex items-center justify-between px-5'>
-                <h1>Posts</h1>
+                <h1 className={'text-center'}>Products</h1>
             </div>
             <div className='flex flex-wrap justify-center p-4 m-4'>
                 {products.map(product => (
