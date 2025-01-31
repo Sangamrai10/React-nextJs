@@ -24,14 +24,15 @@ export default function posts({ searchParams }) {
         fetchData()
     }, [searchParams])
     if (loadings) return <Loading/>
-    if (error) return <div>Error: {error.message}</div>
+        
+    if (error) return <div className='flex items-center relative justify-center font-bold h-96'>Error: {error.message}</div>
 
     return (
         <>
-            <div className='flex items-center justify-between px-5'>
-                <h1 className={'text-center'}>Products</h1>
+            <div className='px-5'>
+                <h1 className='text-center uppercase py-3 font-bold text-xl'>Products</h1>
             </div>
-            <div className='flex flex-wrap justify-center p-4 m-4'>
+            <div className='flex item-center flex-wrap justify-center px-5'>
                 {products.map(product => (
                     <Card key={product.id} product={product} />
                 ))}
