@@ -20,8 +20,8 @@ export default function Card({ product }) {
             <Image width={500} height={500} className="h-40 w-auto mx-auto" src={product.imageUrls.length > 0 ? product.imageUrls[0] : placeholder} alt={product.name} />
             <div className="px-6 py-4">
                 <div className="font-semibold text-lg mb-2">
-
                     <div className='flex justify-evenly'>
+
                         {/* product category  */}
                         <span className=" bg-gray-200 rounded-full px-3 m-1 text-sm font-semibold text-gray-700 hover:bg-red-400">
                             <Link href={`${Products_Page}/category/${product.category}`}>
