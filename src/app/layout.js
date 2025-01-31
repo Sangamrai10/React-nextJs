@@ -13,7 +13,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
-        <header className="bg-gray-100"> 
+        <header className="bg-primary-50"> 
           <div className="md:container flex mx-auto justify-between items-center h-16 relative">
 
             {/* redirect to Home_Page */}
