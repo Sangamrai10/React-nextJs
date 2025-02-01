@@ -16,21 +16,21 @@ export default function Card({ product }) {
     }
 
     return (
-        <div key={product.id} className="w-80 m-4 rounded overflow-hidden shadow-lg">
+        <div key={product.id} className="w-64 m-4 rounded overflow-hidden shadow-lg">
             <Image width={500} height={500} className="h-40 w-auto mx-auto" src={product.imageUrls.length > 0 ? product.imageUrls[0] : placeholder} alt={product.name} />
             <div className="px-6 py-4">
-                <div className="font-semibold text-lg mb-2">
-                    <div className='flex justify-evenly'>
+                <div className="font-semibold text-sm mb-2">
+                    <div className='flex justify-between'>
 
                         {/* product category  */}
-                        <span className=" bg-gray-200 rounded-full px-3 m-1 text-sm font-semibold text-gray-700 hover:bg-red-400">
+                        <span className=" bg-gray-200 rounded-full px-3 m-1text-sm font-semibold text-gray-700 hover:bg-red-400">
                             <Link href={`${Products_Page}/category/${product.category}`}>
                                 {product.category}
                             </Link>
                         </span>
 
                         {/* product brand  */}
-                        <span className=" bg-gray-200 rounded-full px-3 m-1 text-sm font-semibold text-gray-700 hover:bg-red-400">
+                        <span className=" bg-gray-200 rounded-full px-3 text-sm font-semibold text-gray-700 hover:bg-red-400">
                             <Link href={`${Products_Page}/brand/${product.brand}`}>
                                 {product.brand}
                             </Link>
