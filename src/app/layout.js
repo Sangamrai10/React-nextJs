@@ -11,9 +11,9 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" className="dark">
       <body>
-        <header className="bg-primary-50">
+        <header className="bg-primary-50 dark:bg-slate-500 dark:text-white">
           <div className="md:container flex mx-auto justify-between items-center h-16 relative">
 
             {/* redirect to Home_Page */}
@@ -23,8 +23,8 @@ export default function RootLayout({ children }) {
               {/* navigation */}
               <Navbar/>
 
-              {/* login page  */}
-              <Link href={`${Login_Page}`}className='p-1 rounded text-white text-sm bg-primary-500'>LOGIN</Link>
+              {/* login page */}
+              <Link href={`${Login_Page}`}className='p-1 px-2 rounded text-white text-sm bg-primary-500'>LOGIN</Link>
             </div>
           </div>
         </header>
