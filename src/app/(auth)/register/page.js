@@ -1,6 +1,6 @@
 import React from 'react'
 import Image from 'next/image'
-import LoginForm from '@/components/auth/LoginForm'
+import RegisterForm from '@/components/auth/RegisterForm'
 import kaneki from '@/assets/kaneki.jpg'
 
 export default function page() {
@@ -11,7 +11,7 @@ export default function page() {
           </div>
           <div className='mt-32 p-9'>
             <h4 className='text-3xl font-bold'>SignUp</h4>
-            <LoginForm/>
+            <RegisterForm/>
           </div>
         </div>
   )
