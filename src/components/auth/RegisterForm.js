@@ -28,10 +28,10 @@ export default function RegisterForm() {
         try {
             const res = await registerUser(data)
 
-
-
+            // save authToken to localStorage 
             localStorage.setItem("authToken", res.token)
-
+            
+            // toast message on operation success 
             toast.success(
                 "register successful",
                 {
