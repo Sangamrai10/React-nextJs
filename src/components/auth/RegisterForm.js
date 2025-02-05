@@ -4,10 +4,12 @@ import { useForm } from 'react-hook-form';
 import { MdOutlineMailOutline } from 'react-icons/md';
 import PasswordField from './PasswordField';
 import { PASSWORD_REGEX } from '@/constants/regex';
-import {registerUser} from '@/api/auth'
+import { registerUser } from '@/api/auth'
 import { toast, ToastContainer } from 'react-toastify';
-import { Home_Page } from '@/constants/routes';
+import { Home_Page, Login_Page } from '@/constants/routes';
 import { useRouter } from 'next/navigation';
+import Link from 'next/link'
+
 
 export default function RegisterForm() {
 
@@ -26,7 +28,7 @@ export default function RegisterForm() {
         try {
             const res = await registerUser(data)
 
-            // send user to Home page 
+
 
             localStorage.setItem("authToken", res.token)
 
@@ -34,6 +36,7 @@ export default function RegisterForm() {
                 "register successful",
                 {
                     autoClose: 1500,
+                    // send user to Home page 
                     onClose: () => router.push(Home_Page)
                 })
         } catch (error) {
@@ -119,10 +122,14 @@ export default function RegisterForm() {
             {/* confirm password error field  */}
             <p className='text-red-600'>{errors.confirmPassword?.message}</p>
 
-            <button type='submit' value={loading ? "submiting...." : "submit"} className='bg-primary-500 px-4 rounded hover:bg-primary-400 text-white'>
-                submit
-            </button>
-            <ToastContainer/>
+            {/* submit form*/}
+            <input type='submit' value={loading ? "submiting...." : "Sign Up"} disabled={loading} className='bg-primary-500 px-4 rounded hover:bg-primary-400 text-white' />
+            <div>
+                {/* already have an account? */}
+                <Link href={`${Login_Page}`} className='text-primary-400 text-md'>already have and account?</Link>
+            </div>
+            {/* toast container for toast message  */}
+            <ToastContainer />
         </form>
 
     )
