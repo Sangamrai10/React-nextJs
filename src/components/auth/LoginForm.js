@@ -27,14 +27,14 @@ export default function LoginForm() {
     try {
       const res = await login(data)
 
-      // send user to Home page 
-
       localStorage.setItem("authToken", res.token)
 
       toast.success(
         "Login successful",
         {
           autoClose: 1500,
+
+          // send user to Home page 
           onClose: () => router.push(Home_Page)
         })
     } catch (error) {
@@ -84,20 +84,22 @@ export default function LoginForm() {
 
 
         {/* forgot password, signUp, remember me section  */}
-        <div>
+        <div className='inline'>
 
           {/* checkbox  */}
           <input type='checkbox' id='rememberMe' />
           <label htmlFor='rememberMe'>Remember me</label> <br />
 
-          {/* forget password, signup  */}
-          <Link href={`${Forgot_Password_Page}`} className='underline text-primary-400 text-md'>Forgot password?</Link>
-          <Link href={`${Register_Page}`} className='underline text-primary-400 text-md'>sign up</Link>
-        </div><br />
+          {/* submit form*/}
+          <input type='submit' value={loading ? "submiting...." : "Login"} disabled={loading} className='bg-primary-500 px-4 rounded hover:bg-primary-400 text-white' />
+          <div>
+            {/* forget password, signup  */}
+            <Link href={`${Forgot_Password_Page}`} className=' text-primary-400 text-md'>Forgot password?</Link> <br/>
+            <Link href={`${Register_Page}`} className=' text-primary-400 text-md'>Create new account</Link>
+          </div>
+        </div>
 
-        <button type='submit' value={loading ? "submiting...." : "submit"} className='bg-primary-500 px-4 rounded hover:bg-primary-400 text-white'>
-          submit
-        </button>
+
       </div>
       <ToastContainer />
 
