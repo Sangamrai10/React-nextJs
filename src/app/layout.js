@@ -11,7 +11,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className="dark">
+    <html lang="en" className="light">
       <body>
         <header className="bg-primary-50 dark:bg-gray-800 dark:text-white">
           <div className="md:container flex mx-auto justify-between items-center h-16 relative">
