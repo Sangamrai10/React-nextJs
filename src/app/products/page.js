@@ -29,7 +29,7 @@ export default function posts({ searchParams }) {
 
     return (
         <>
-            <div className='px-5'>
+            <div className='px-5 dark:text-white'>
                 <h1 className='text-center uppercase py-3 font-bold text-xl'>Products</h1>
             </div>
             <div className='flex item-center flex-wrap justify-center px-5'>

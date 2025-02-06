@@ -30,7 +30,7 @@ export default function RegisterForm() {
 
             // save authToken to localStorage 
             localStorage.setItem("authToken", res.token)
-            
+
             // toast message on operation success 
             toast.success(
                 "register successful",
@@ -124,9 +124,10 @@ export default function RegisterForm() {
 
             {/* submit form*/}
             <input type='submit' value={loading ? "submiting...." : "Sign Up"} disabled={loading} className='bg-primary-500 px-4 rounded hover:bg-primary-400 text-white' />
+
+            {/* already have an account? */}
             <div>
-                {/* already have an account? */}
-                <Link href={`${Login_Page}`} className='text-primary-400 text-md'>already have and account?</Link>
+                <Link href={`${Login_Page}`} className='text-primary-400 dark:text-white text-md'>already have and account?</Link>
             </div>
             {/* toast container for toast message  */}
             <ToastContainer />

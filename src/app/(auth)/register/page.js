@@ -5,7 +5,7 @@ import kaneki from '@/assets/kaneki.jpg'
 
 export default function page() {
   return (
-    <div className='shadow-xl min-h-[80svh] rounded-2xl flex item-center justify-evenly'>
+    <div className='shadow-xl min-h-[80svh] dark:bg-gray-800 dark:text-white rounded-2xl flex item-center justify-evenly'>
           <div className='w-1/2 p-20 hidden md:block'>
             <Image src={kaneki} alt='auth image' height={10} width={500} className='w-full h-96'/>
           </div>

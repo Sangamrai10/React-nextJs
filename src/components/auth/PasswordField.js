@@ -16,7 +16,7 @@ export default function PasswordField(props) {
             <MdPassword className='mb-2' />
             <input
                 type={isPasswordVisible ? "text" : "password"}
-                className='focus:outline-none bg-transparent w-full px-3 py-1 '
+                className='focus:outline-none bg-transparent dark:text-white w-full px-3 py-1 '
                 {...props}
             />
             {isPasswordVisible ? <RiEyeFill className='mb-2' onClick={togglePassword} /> : <RiEyeOffFill className='mb-2' onClick={togglePassword} />}

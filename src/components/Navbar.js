@@ -9,7 +9,7 @@ export default function Navbar() {
     const pathname = usePathname()
 
     return (
-        <nav className="md:w-1/2 flex justify-between gap-4 pt-1" role="navigation">
+        <nav className="md:w-1/2 flex justify-between  gap-4 pt-1" role="navigation">
             {navLink.map((link, index) => {
                 const isActive = link.route == Home_Page ?
                     pathname === link.route :
@@ -18,7 +18,7 @@ export default function Navbar() {
                     <Link
                         href={link.route}
                         key={index}
-                        className={isActive ? "text-blue-500" : "text-black"}>
+                        className={isActive ? "text-blue-500" : "text-black dark:text-white"}>
                         {link.title}
                     </Link>
                 );

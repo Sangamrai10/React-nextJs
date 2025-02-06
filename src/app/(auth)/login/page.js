@@ -5,7 +5,7 @@ import LoginForm from '@/components/auth/LoginForm'
 
 export default function LoginPage() {
   return (
-    <div className='bg-white dark:bg-slate-500 min-h-[80svh] rounded-2xl flex item-center justify-evenly p-10 pt-0 md:p-20 m-5 w-full lg:'>
+    <div className='bg-white dark:bg-gray-800 min-h-[80svh] rounded-2xl flex item-center justify-evenly p-10 pt-0 md:p-20 m-5 w-full lg:'>
       <div className='w-1/2 p-10 hidden md:block'>
         <Image src={ecommerce} alt='auth image' height={300} width={500} className='w-full' />
       </div>

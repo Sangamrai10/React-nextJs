@@ -50,7 +50,7 @@ export default function LoginForm() {
 
   return (
     <form onSubmit={handleSubmit(submitForm)}>
-      <div className='py-2'>
+      <div className='py-2 dark:text-white'>
 
         {/* EMAIL ADDRESS*/}
         <div className="flex justify-center border-b border-gray-500 items-end my-3">
@@ -94,8 +94,8 @@ export default function LoginForm() {
           <input type='submit' value={loading ? "submiting...." : "Login"} disabled={loading} className='bg-primary-500 px-4 rounded hover:bg-primary-400 text-white' />
           <div>
             {/* forget password, signup  */}
-            <Link href={`${Forgot_Password_Page}`} className=' text-primary-400 text-md'>Forgot password?</Link> <br/>
-            <Link href={`${Register_Page}`} className=' text-primary-400 text-md'>Create new account</Link>
+            <Link href={`${Forgot_Password_Page}`} className=' text-primary-400 text-md dark:text-white'>Forgot password?</Link> <br/>
+            <Link href={`${Register_Page}`} className=' text-primary-400 text-md dark:text-white'>Create new account</Link>
           </div>
         </div>
 
