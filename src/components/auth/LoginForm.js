@@ -29,11 +29,11 @@ export default function LoginForm() {
 
       localStorage.setItem("authToken", res.token)
 
+      // toast message on operation success 
       toast.success(
         "Login successful",
         {
           autoClose: 1500,
-
           // send user to Home page 
           onClose: () => router.push(Home_Page)
         })
@@ -94,7 +94,7 @@ export default function LoginForm() {
           <input type='submit' value={loading ? "submiting...." : "Login"} disabled={loading} className='bg-primary-500 px-4 rounded hover:bg-primary-400 text-white' />
           <div>
             {/* forget password, signup  */}
-            <Link href={`${Forgot_Password_Page}`} className=' text-primary-400 text-md dark:text-white'>Forgot password?</Link> <br/>
+            <Link href={`${Forgot_Password_Page}`} className=' text-primary-400 text-md dark:text-white'>Forgot password?</Link> <br />
             <Link href={`${Register_Page}`} className=' text-primary-400 text-md dark:text-white'>Create new account</Link>
           </div>
         </div>
