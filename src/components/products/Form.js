@@ -11,10 +11,14 @@ export default function Form() {
 
     function submitForm(data) {
         console.log(data)
-        addProducts(data).then(res=>{
-            console.log(data)
-            
-        }).catch(err=>{console.log(err)})
+        setLoading(true);
+        addProducts(data).then(res => {
+            console.log(data);
+            setLoading(false);
+        }).catch(err => {
+            console.log(err);
+            setLoading(false);
+        });
     }
     return (
         <>
