@@ -1,7 +1,8 @@
 
 
 export function formatSearchParams(searchParams) {
-    const { limit, sort, min, max, brand, category, name } = searchParams;
+    const { limit, sort, min, max, brand, category, name } = 
+        typeof searchParams === 'function' ? searchParams() : searchParams;
   
     let query = "";
   
