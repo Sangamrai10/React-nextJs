@@ -1,12 +1,11 @@
 'use client'
 
 import React, { useState } from 'react';
-import Image from "next/image";
 import { useForm } from 'react-hook-form';
 import { addProducts } from '@/api/products';
 
-export default function Form() {
-    const { register, handleSubmit } = useForm()
+export default function Form({ isEditing = false, product }) {
+    const { register, handleSubmit, formState={errors} } = useForm({values: product});
     const [loading, setLoading] = useState(false)
 
     function submitForm(data) {
