@@ -2,7 +2,7 @@
 import React from 'react';
 import { getAllProducts } from '@/api/products';
 import Card from '@/components/products/card';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, use } from 'react';
 import Loading from './loading'
 import { Products_Page } from '@/constants/routes';
 import Link from 'next/link';
@@ -12,6 +12,7 @@ export default function posts({ searchParams }) {
     const [error, setError] = useState(null)
     const [loadings, setLoadings] = useState(true)
 
+    const unwrappedParams=use(searchParams)
     useEffect(() => {
         async function fetchData() {
             try {
