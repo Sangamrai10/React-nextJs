@@ -13,13 +13,16 @@ async function getAllProducts(searchParams) {
 }
 
 async function addProducts(data) {
-    const authToken = localStorage.getItem('authToken')
-    const response = await axios.post(`${config.apiUrl}/api/products`, data, {
+    const authToken = localStorage.getItem('authToken');
+
+    const response = await api.post(`/api/products`, data, {
         headers: {
-            Authorization: (`brarer ${authToken}`)
-        }
-    })
-    return response
+            Authorization: `Bearer ${authToken}`,
+            // Do not set Content-Type explicitly if data is FormData
+        },
+    });
+
+    return response;
 }
 
 
