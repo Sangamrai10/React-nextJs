@@ -16,7 +16,7 @@ export default function posts({ searchParams }) {
     useEffect(() => {
         async function fetchData() {
             try {
-                const data = await getAllProducts(searchParams);
+                const data = await getAllProducts(unwrappedParams);
                 setProducts(data);
             } catch (error) {
                 setError(error)
