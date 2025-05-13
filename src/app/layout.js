@@ -2,6 +2,7 @@ import Link from "next/link";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import { Home_Page, Login_Page} from "@/constants/routes";
+import hamroPasal from "@/assets/hamroPasal.png";
 
 
 export const metadata = {
@@ -17,7 +18,9 @@ export default function RootLayout({ children }) {
           <div className="md:container flex mx-auto justify-between items-center h-16 relative">
 
             {/* redirect to Home_Page */}
-            <Link href={`${Home_Page}`}>LOGO</Link>
+            <Link href={`${Home_Page}`} className="ps-4 md:ps-0">
+            <img src={hamroPasal.src} alt="logo" className="w-16 h-16 rounded-full" />
+            </Link>
 
             <div className='flex justify-between p-4 gap-4'>
               {/* navigation */}

@@ -32,7 +32,7 @@ export default function posts({ searchParams }) {
 
     return (
         <>
-            <div className='dark:text-white border-b border-gray-900 flex item-center justify-between'>
+            <div className='dark:text-white w-full p-2 border-b border-gray-900 flex item-center justify-between'>
                 <h1 className='uppercase py-2 font-bold text-xl'>Products</h1>
                 <Link className=' px-2 my-2 dark:hover:bg-slate-600 dark:bg-primary-900 bg-slate-400 rounded' href={`${Products_Page}/add`}>Add Products</Link>
             </div>
