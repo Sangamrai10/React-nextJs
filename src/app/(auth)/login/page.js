@@ -3,6 +3,7 @@ import Image from 'next/image'
 import ecommerce from '@/assets/ecommerce.png'
 import LoginForm from '@/components/auth/LoginForm'
 
+
 export default function LoginPage() {
   return (
     <div className='bg-white dark:bg-gray-800 min-h-[80svh] rounded-2xl flex item-center justify-evenly p-10 pt-0 md:p-20 m-5 w-full lg:'>
