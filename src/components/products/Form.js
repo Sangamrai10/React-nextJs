@@ -12,7 +12,7 @@ export default function Form({ isEditing = false, product }) {
   const {
     register,
     handleSubmit,
-    formState = { errors },
+    formState :{ errors },
   } = useForm({ values: product });
   const [loading, setLoading] = useState(false);
   const [localImageUrls, setLocalImageUrls] = useState([]);
@@ -201,7 +201,7 @@ export default function Form({ isEditing = false, product }) {
 
             <input
               type="submit"
-              value={loading ? "Submitting..." : "Add Product"}
+              value={loading ? "Submitting..." : isEditing ? "Updated" : "Add"}
               disabled={loading}
               className="bg-primary-500 px-4 rounded hover:bg-primary-400 text-white"
             />
