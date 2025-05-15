@@ -15,7 +15,7 @@ async function getAllProducts(searchParams) {
 async function addProducts(data) {
     const authToken = localStorage.getItem('authToken');
 
-    const response = await api.post(`/api/products`, data, {
+    const response = await api.post(`/api/products?limit=100&sort={"createdAt":-1}`, data, {
         headers: {
             Authorization: `Bearer ${authToken}`,
             // Do not set Content-Type explicitly if data is FormData
@@ -25,6 +25,23 @@ async function addProducts(data) {
     return response;
 }
 
+async function getProductById(id) {
+    const response = await api.get(`/api/products/${id}`);
+    return response.data;
+}
+
+async function editProduct(id, data) {
+    const authToken = localStorage.getItem('authToken');
+
+    const response = await api.put(`/api/products/${id}`, data, {
+        headers: {
+            Authorization: `Bearer ${authToken}`,
+            // Do not set Content-Type explicitly if data is FormData
+        },
+    });
+
+    return response;
+}
 
 export {
     getAllProducts,
