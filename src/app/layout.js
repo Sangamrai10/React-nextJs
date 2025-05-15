@@ -3,6 +3,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import { Home_Page, Login_Page} from "@/constants/routes";
 import hamroPasal from "@/assets/hamroPasal.png";
+import Header from "@/components/Header";
 
 
 export const metadata = {
@@ -14,23 +15,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className="light">
       <body>
-        <header className="bg-primary-50 dark:bg-gray-800 dark:text-white">
-          <div className="md:container flex mx-auto justify-between items-center h-16 relative">
-
-            {/* redirect to Home_Page */}
-            <Link href={`${Home_Page}`} className="ps-4 md:ps-0">
-            <img src={hamroPasal.src} alt="logo" className="w-16 h-16 rounded-full" />
-            </Link>
-
-            <div className='flex justify-between p-4 gap-4'>
-              {/* navigation */}
-              <Navbar/>
-
-              {/* login page */}
-              <Link href={`${Login_Page}`}className='p-1 px-2 rounded text-white text-sm bg-primary-500'>LOGIN</Link>
-            </div>
-          </div>
-        </header>
+        <Header />
         {children}
       </body>
     </html>
