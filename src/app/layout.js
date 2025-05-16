@@ -4,6 +4,8 @@ import Navbar from "@/components/Navbar";
 import { Home_Page, Login_Page} from "@/constants/routes";
 import hamroPasal from "@/assets/hamroPasal.png";
 import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+import Notification from "@/components/Notification";
 
 
 export const metadata = {
@@ -15,8 +17,10 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className="light">
       <body>
+        <Notification/>
         <Header />
         {children}
+        <Footer/>
       </body>
     </html>
   );
