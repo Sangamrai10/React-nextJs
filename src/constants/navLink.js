@@ -1,22 +1,22 @@
 
-const { Home_Page, About_Page, Contact_Page, Products_Page, Login_Page } =require( "./routes");
+const { Home_Route, About_Route, Contact_Route, Products_Route, Login_Route } =require( "./routes");
 
 export const navLink = [
     {
         title: "Home",
-        route: Home_Page,
+        route: Home_Route,
     },
     {
         title: "About",
-        route: About_Page,
+        route: About_Route,
     },
     {
         title: "Contact",
-        route: Contact_Page,
+        route: Contact_Route,
     },
     {
         title: "Products",
-        route: Products_Page,
+        route: Products_Route,
     },
     // {
     //     title: "login",

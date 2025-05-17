@@ -4,7 +4,7 @@ import React from 'react'
 import Image from 'next/image'
 import placeholder from '@/assets/placeholder.png'
 import Link from 'next/link'
-import { Products_Page } from '@/constants/routes'
+import { Products_Route } from '@/constants/routes'
 import { MdModeEditOutline, MdDelete } from "react-icons/md";
 import { useState } from 'react'
 
@@ -24,21 +24,21 @@ export default function Card({ product }) {
 
                         {/* product category  */}
                         <span className=" bg-gray-200 dark:bg-slate-500 dark:text-white dark:hover:underline rounded-full px-3 ms-1 text-sm font-semibold text-gray-700 hover:bg-red-400">
-                            <Link href={`${Products_Page}/category/${product.category}`}>
+                            <Link href={`${Products_Route}/category/${product.category}`}>
                                 {product.category}
                             </Link>
                         </span>
 
                         {/* product brand  */}
                         <span className=" bg-gray-200 dark:bg-slate-500 dark:text-white dark:hover:underline rounded-full px-3 text-sm font-semibold text-gray-700 hover:bg-red-400">
-                            <Link href={`${Products_Page}/brand/${product.brand}`}>
+                            <Link href={`${Products_Route}/brand/${product.brand}`}>
                                 {product.brand}
                             </Link>
                         </span>
 
                         {/* products edit icon */}
                         <span className="rounded-full text-gray-700 dark:text-white dark:hover:text-red-400 hover:text-red-400">
-                            <Link href={`${Products_Page}/edit/${product.id}`}>
+                            <Link href={`${Products_Route}/edit/${product.id}`}>
                                 <MdModeEditOutline className='text-lg' />
                             </Link>
                         </span>
@@ -54,7 +54,7 @@ export default function Card({ product }) {
                     {/* product title */}
                     <div>
                         <h2 className="text-xl font-semibold py-1 capitalize dark:text-white hover:underline">
-                            <Link href={`${Products_Page}/${product.id}`}>{product.name}</Link>
+                            <Link href={`${Products_Route}/${product.id}`}>{product.name}</Link>
                         </h2>
                     </div>
                 </div>

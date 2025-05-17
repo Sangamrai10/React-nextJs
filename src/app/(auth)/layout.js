@@ -3,7 +3,7 @@
 import React, { useEffect } from "react";
 import getAuthUser from '@/helpers/authUser';
 import { useRouter } from 'next/navigation';
-import { Home_Page } from "@/constants/routes";
+import { Home_Route } from "@/constants/routes";
 
 export default function layout({ children }) {
 
@@ -17,7 +17,7 @@ export default function layout({ children }) {
   // if user is already logged in, redirect to home page
   useEffect(() => {
     if (authUser) {
-      router.push(Home_Page);
+      router.push(Home_Route);
     }
   }, [authUser, router]);
   

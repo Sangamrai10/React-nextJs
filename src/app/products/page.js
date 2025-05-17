@@ -4,7 +4,7 @@ import { getAllProducts } from '@/api/products';
 import Card from '@/components/products/card';
 import { useState, useEffect, use } from 'react';
 import Loading from './loading'
-import { Products_Page } from '@/constants/routes';
+import { Products_Route } from '@/constants/routes';
 import Link from 'next/link';
 
 export default function posts({ searchParams }) {
@@ -34,7 +34,7 @@ export default function posts({ searchParams }) {
         <>
             <div className='dark:text-white w-full p-2 border-b border-gray-900 flex item-center justify-between'>
                 <h1 className='uppercase py-2 font-bold text-xl'>Products</h1>
-                <Link className=' px-2 my-2 dark:hover:bg-slate-600 dark:bg-primary-900 bg-slate-400 rounded' href={`${Products_Page}/add`}>Add Products</Link>
+                <Link className=' px-2 my-2 dark:hover:bg-slate-600 dark:bg-primary-900 bg-slate-400 rounded' href={`${Products_Route}/add`}>Add Products</Link>
             </div>
             <div className='flex item-center flex-wrap justify-center px-5'>
                 {products.map(product => (

@@ -1,8 +1,7 @@
 import { navLink } from "@/constants/navLink";
 import Link from "next/link";
 import React from "react";
-import hamroPasal from "@/assets/hamroPasal.png";
-import { Home_Page, Login_Page } from "@/constants/routes";
+import { Home_Route, Login_Route } from "@/constants/routes";
 import config from "@/config/config";
 
 function Header() {
@@ -12,7 +11,7 @@ function Header() {
         <div className="flex flex-col max-w-screen-xl px-4 mx-auto md:items-center md:justify-between md:flex-row md:px-6 lg:px-8">
             {/* logo */}
           <div className="flex flex-row items-center justify-between p-2 ">
-            <Link href={`${Home_Page}`} className="ps-4 md:ps-0 text-primary-500">
+            <Link href={`${Home_Route}`} className="ps-4 md:ps-0 text-primary-500">
               {/* <img
                 src={hamroPasal.src}
                 alt="logo"
@@ -44,7 +43,7 @@ function Header() {
             })}
           </nav>
           <Link
-            href={`${Login_Page}`}
+            href={`${Login_Route}`}
             className="p-1 px-2 rounded text-white text-sm bg-primary-500"
           >
             LOGIN

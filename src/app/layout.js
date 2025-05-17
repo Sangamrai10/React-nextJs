@@ -1,7 +1,7 @@
 import Link from "next/link";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
-import { Home_Page, Login_Page} from "@/constants/routes";
+import { Home_Route, Login_Route} from "@/constants/routes";
 import hamroPasal from "@/assets/hamroPasal.png";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";

@@ -5,7 +5,7 @@ import { useForm } from 'react-hook-form';
 import { MdOutlineMailOutline } from 'react-icons/md';
 import { toast, ToastContainer } from 'react-toastify';
 import Link from 'next/link'
-import { Forgot_Password_Page, Register_Page, Home_Page } from '@/constants/routes'
+import { Forgot_Password_Route, Register_Route, Home_Route } from '@/constants/routes'
 import { login } from '@/api/auth'
 import { useRouter } from 'next/navigation';
 import PasswordField from './PasswordField';
@@ -37,7 +37,7 @@ export default function LoginForm() {
         {
           autoClose: 1500,
           // send user to Home page 
-          onClose: () => router.push(Home_Page)
+          onClose: () => router.push(Home_Route)
         })
     } catch (error) {
       toast.error(error.response.data, { autoClose: 1500 })
@@ -98,8 +98,8 @@ export default function LoginForm() {
           <input type='submit' value={loading ? "submitting...." : "Login"} disabled={loading} className='bg-primary-500 px-4 rounded hover:bg-primary-400 text-white' />
           <div>
             {/* forget password, signup  */}
-            <Link href={`${Forgot_Password_Page}`} className=' text-primary-400 text-md dark:text-white'>Forgot password?</Link> <br />
-            <Link href={`${Register_Page}`} className=' text-primary-400 text-md dark:text-white'>Create new account</Link>
+            <Link href={`${Forgot_Password_Route}`} className=' text-primary-400 text-md dark:text-white'>Forgot password?</Link> <br />
+            <Link href={`${Register_Route}`} className=' text-primary-400 text-md dark:text-white'>Create new account</Link>
           </div>
         </div>
 
