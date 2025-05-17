@@ -46,4 +46,6 @@ async function editProduct(id, data) {
 export {
     getAllProducts,
     addProducts,
+    getProductById,
+    editProduct,
 }
