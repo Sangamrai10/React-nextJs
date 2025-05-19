@@ -1,7 +1,5 @@
 import { formatSearchParams } from "@/helpers/formatParams";
 import api from "./api";
-import axios from "axios";
-import config from "@/config/config";
 
 async function getAllProducts(searchParams) {
 
